@@ -1,0 +1,22 @@
+// Base Colors
+$purple: #8A05BE; // Roxo principal, inspirado na Nubank
+$white: #ffffff; // Branco neutro
+$grey: #F4F4F5; // Cinza claro, para fundos
+$black: #1C1C1E; // Preto moderno para textos e contrastes
+
+// Primary Colors
+$primary: #820AD1; // Roxo principal (mais vivo)
+$secondary: #C084FC; // Roxo claro para hover ou áreas menos intensas
+$accent: #DA77F2; // Roxo pastel para detalhes e elementos decorativos
+$primary-dark: #3c42a3; /* Cor mais escura do botão para o hover */
+
+// Feedback Colors
+$success: #2DCC70; // Verde para indicações de sucesso
+$info: #3A86FF; // Azul claro para informações ou destaques
+$warning: #FFC107; // Amarelo para avisos
+$danger: #FF5E5E; // Vermelho vibrante para erros ou alertas críticos
+
+// Gradients
+$gradient-primary: linear-gradient(145deg, $primary, $secondary);
+$gradient-accent: linear-gradient(145deg, $accent, $white);
+

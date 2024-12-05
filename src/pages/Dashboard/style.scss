@@ -1,0 +1,91 @@
+@use '@/assets/scss/_main' as main;
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: main.$grey;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(145deg, main.$primary, main.$secondary); 
+    transition: width 0.3s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &.collapsed {
+        width: 0;
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: main.$primary;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: main.$black; 
+    }
+}
+
+.content-right {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+
+    .navbar-component {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: main.$white; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        .menu-toggle {
+            margin-right: auto;
+            font-size: 24px;
+            cursor: pointer;
+            color: main.$primary;
+        }
+    }
+
+    .page {
+        padding: 20px;
+        flex-grow: 1;
+        background-color: main.$grey;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        z-index: 1000;
+    }
+
+    .sidebar.collapsed {
+        left: -250px;
+    }
+
+    .content-right {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .content-right {
+        width: calc(100% - 250px); 
+    }
+
+    .sidebar.collapsed + .content-right {
+        width: 100%;
+    }
+}
